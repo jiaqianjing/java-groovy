@@ -1,0 +1,8 @@
+<beans>
+  <bean id='myBean1' class='com.diegochen.Bean1'>
+    <property name='dao' ref='dao1' />
+  </bean>
+  <bean id='myBean2' class='com.diegochen.Bean2'>
+    <property name='dao' ref='dao2' />
+  </bean>
+</beans>
