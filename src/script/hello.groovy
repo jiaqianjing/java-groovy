@@ -8,5 +8,9 @@ def helloWithoutParam(){
 
 def helloWithParam(person, id){
     println "start to call helloWithParam, param{person:" + person + ", id:" + id + "}";
+    println person.name
+    println person.age
+    println person.address
+    println person.getPhone()
     return "success, helloWithParam";
 }

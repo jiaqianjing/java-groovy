@@ -8,8 +8,8 @@ public class Test {
     public static void main(String[] args) {
 
 //        testGroovyWithoutParam();
-//        testGroovyWithParam();
-        testMyGroovy();
+        testGroovyWithParam();
+//        testMyGroovy();
     }
     /**
      * 测试没有参数的方法调用
@@ -29,6 +29,7 @@ public class Test {
      */
     public static void testGroovyWithParam(){
         Person person = new Person("wchi", "nanjing", 30);
+        person.setPhone("17098317684");
         String result = null;
         try {
             result = (String) GroovyCommonUtil.invokeMethod("hello.groovy", "helloWithParam", person, "testGroovy4");
