@@ -3,11 +3,6 @@ import org.elasticsearch.common.xcontent.XContentFactory
 /**
  * Created by Administrator on 2016/9/26.
  */
-
-def aloha(bc) {
-    return bc.SID
-}
-
 def parse(bc, record) {
     json = XContentFactory.jsonBuilder().startObject()
             .field(bc.TYPE, record.get(bc.TYPE))
@@ -15,7 +10,7 @@ def parse(bc, record) {
             .field(bc.UID, record.get(bc.UID));
     logs = record.get("logs")
     if (logs != null) {
-        return json.endObject().string();
+        return "sucess"
     }
 }
 

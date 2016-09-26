@@ -6,7 +6,10 @@ import java.text.SimpleDateFormat
 import java.util
 import java.util.Date
 
+import edu.buaa.qjjia2
+import edu.buaa.qjjia2.{BizConstants, GroovyCommonUtil}
 import org.apache.avro.Schema
+import org.apache.avro.generic.GenericRecord
 import qjjia.model.log.{MediaData, RawLog, SvcLog}
 import qjjia.utils.{JsonUtils, ReadAvro, SvcLogAvroUtil}
 
@@ -14,7 +17,6 @@ import qjjia.utils.{JsonUtils, ReadAvro, SvcLogAvroUtil}
   * Created by Administrator on 2016/8/26.
   */
 object Test {
-
 
   def main(args: Array[String]): Unit = {
     //    val  byteBuffer = ByteBuffer.allocate(256)  //容量为256字节
@@ -62,6 +64,7 @@ object Test {
     svc.setUid("370272561")
 
     val baos = SvcLogAvroUtil.serialize(svc)
+
     /**
       * 测试  Demo
       */
@@ -80,6 +83,8 @@ object Test {
     val record = ReadAvro.deserializeRecord(schema, baos)
     println(record)
 
+    val bc:BizConstants = new BizConstants;
+    test(bc,record);
 
 
     // 写avro文件
@@ -108,4 +113,9 @@ object Test {
 
   }
 
+  def test(bc: BizConstants,record: GenericRecord): Unit = {
+    var result: String = null;
+    result = GroovyCommonUtil.invokeMethod("aloha.groovy", "parse", bc,record).asInstanceOf[String];
+    println(result)
+  }
 }
