@@ -8,8 +8,9 @@ public class Test {
     public static void main(String[] args) {
 
 //        testGroovyWithoutParam();
-        testGroovyWithParam();
+//        testGroovyWithParam();
 //        testMyGroovy();
+        second();
     }
     /**
      * 测试没有参数的方法调用
@@ -47,6 +48,17 @@ public class Test {
         String result = null;
         try {
             result = (String) GroovyCommonUtil.invokeMethod("GrovvySystemConfigRead.groovy", "getName", name);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("testGroovy5: " + result + "\n");
+    }
+
+    public static void second(){
+        BizConstants bc = new BizConstants();
+        String result = null;
+        try {
+            result = (String) GroovyCommonUtil.invokeMethod("aloha.groovy", "aloha",bc);
         } catch (Exception e) {
             e.printStackTrace();
         }

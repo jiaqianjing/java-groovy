@@ -3,7 +3,7 @@ path{
     file_update_list = "e:/work/cc2/file_update_list.txt";
     //This is root directory of workspace
     workspace_root_path = "e:/work/cc2/asia_stratagy/workspace";
-    //This is directory for backup.
+    //This is directory FORInstance backup.
     backup_path = "d:/download";
 }
 

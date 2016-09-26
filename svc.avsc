@@ -1,0 +1,70 @@
+{
+  "type" : "record",
+  "name" : "SvcLog",
+  "namespace" : "edu.buaa.qjjia.model.log",
+  "fields" : [ {
+    "name" : "type",
+    "type" : "int"
+  }, {
+    "name" : "sid",
+    "type" : "string"
+  }, {
+    "name" : "uid",
+    "type" : "string"
+  }, {
+    "name" : "timestamp",
+    "type" : "long"
+  }, {
+    "name" : "ip",
+    "type" : "int"
+  }, {
+    "name" : "callName",
+    "type" : "string"
+  }, {
+    "name" : "logs",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "RawLog",
+        "fields" : [ {
+          "name" : "timestamp",
+          "type" : "long"
+        }, {
+          "name" : "level",
+          "type" : "string"
+        }, {
+          "name" : "extras",
+          "type" : {
+            "type" : "map",
+            "values" : "string"
+          }
+        }, {
+          "name" : "descs",
+          "type" : {
+            "type" : "array",
+            "items" : "string",
+            "java-class" : "java.util.List"
+          }
+        } ]
+      },
+      "java-class" : "java.util.List"
+    }
+  }, {
+    "name" : "mediaData",
+    "type" : {
+      "type" : "record",
+      "name" : "MediaData",
+      "fields" : [ {
+        "name" : "type",
+        "type" : "int"
+      }, {
+        "name" : "data",
+        "type" : {
+          "type" : "bytes",
+          "java-class" : "[B"
+        }
+      } ]
+    }
+  } ]
+}

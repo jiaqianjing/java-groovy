@@ -14,7 +14,7 @@ import java.io.IOException;
 public  class GroovyCommonUtil {
     //该变量用于指明groovy脚本所在的父目录
 //    static String root[] = new String[]{"E:/workspace/AcousticSub/GroovyDemo/src/script/"};
-    static String root = new String("E:/workspace/AcousticSub/GroovyDemo/src/script/");
+    static String root = new String("E:\\oschina\\java-groovy\\src\\script");
     static GroovyScriptEngine groovyScriptEngine;
 
     static {

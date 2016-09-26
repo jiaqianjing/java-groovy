@@ -1,0 +1,10 @@
+{
+    "type":"record",
+    "name":"Demo",
+    "namespace" : "edu.buaa.qjjia.model.log",
+    "doc":"A pair of strings",
+    "fields":[
+        {"name":"left","type":"string"},
+        {"name":"right","type":"string"}
+    ]
+}
